@@ -1,4 +1,7 @@
 var mongoose = require('mongoose');
+var uriString = process.env.MONGOLAB_URI ||
+                process.env.MONGOHQ_URL ||
+                'mongodb://localhost/blog';
 
 var EntrySchema = new mongoose.Schema({
   title : { type : String, required : true },
@@ -13,7 +16,7 @@ var Entry;
 function ModelActions(){
   mongoose.model('Entry', EntrySchema);
   Entry = mongoose.model('Entry');
-  mongoose.connect('mongodb://localhost/blog');
+  mongoose.connect(uriString);
   return ModelActions;
 }
 
