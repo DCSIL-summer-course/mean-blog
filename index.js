@@ -4,15 +4,16 @@ var app = express();
 var PORT = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
-
-app.get('/', function(req, res){
-  res.send('Hello World');
-});
+app.use(express.static('public'));
 
 // Routers
 var blogEntries = require('./routers/blogEntries.js');
 
 app.use('/api/blog-entries', blogEntries);
+
+app.get('/*', function(req, res){
+  res.sendFile(__dirname + '/views/app.html');
+});
 
 
 // Start server
