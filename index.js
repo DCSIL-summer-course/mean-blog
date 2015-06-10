@@ -12,7 +12,7 @@ var blogEntries = require('./routers/blogEntries.js');
 app.use('/api/blog-entries', blogEntries);
 
 app.get('/*', function(req, res){
-  res.sendFile(__dirname + '/views/app.html');
+  res.sendFile(__dirname + '/views/index.html');
 });
 
 

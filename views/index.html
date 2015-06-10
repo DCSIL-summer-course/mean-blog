@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="meanBlog">
 <head>
   <title></title>
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
@@ -9,7 +9,10 @@
 
   <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
-<body>
-  Hello World
+<body ng-controller="EntriesIndexCtrl">
+  <div class="blog-entry" ng-repeat="entry in entries">
+    <h2>{{entry.title}}</h2>
+    <p>{{entry.body}}</p>
+  </div>
 </body>
 </html>
