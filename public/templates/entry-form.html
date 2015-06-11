@@ -1,0 +1,18 @@
+<h1>Create a blog entry</h1>
+<form ng-submit="save(entry)">
+  <label>Title:<br>
+    <input type="text" name="title" ng-model="entry.title">
+  </label>
+
+  <br>
+  <label>Content:<br>
+    <textarea ng-model="entry.body"></textarea>
+  </label>
+
+  <input type="submit" value="Save">
+</form>
+
+
+<h2>preview:</h2>
+<h4>{{entry.title}}</h4>
+<p>{{entry.body}}</p>
